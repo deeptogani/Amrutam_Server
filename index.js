@@ -66,3 +66,8 @@ app.get("/getBlogs", async (req, res) => {
   res.json(response);
 
 })
+
+app.get('/svg/:filename', (req, res) => {
+  const { filename } = req.params;
+  res.sendFile(`./assets/svg/${filename}.svg`);
+});
