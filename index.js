@@ -64,10 +64,6 @@ app.get("/getBlogs", async (req, res) => {
   const response = await groupArticles(blogCategories);
 
   res.json(response);
-
 })
 
-app.get('/svg/:filename', (req, res) => {
-  const { filename } = req.params;
-  res.sendFile(`./assets/svg/${filename}.svg`);
-});
+app.use('/assets', express.static('assets'));
